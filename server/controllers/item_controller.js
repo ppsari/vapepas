@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/vapepas');
-const Item = require('../models/items.js');
+const Item = require('../models/item.js');
 
 
 const getAllItem = (req,res) => {

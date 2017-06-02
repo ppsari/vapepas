@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/vapepas');
-let Transaction = require('../models/transactions');
+let Transaction = require('../models/transaction');
 
 const listTransaction = (req,res) => {
   console.log('tes')
