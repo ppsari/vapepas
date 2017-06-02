@@ -1,0 +1,80 @@
+.nav-wrapper {
+  background-color: #0566A3;
+  color: #DCEBF1;
+  position: absolute;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding-right: 30px;
+}
+
+.nav-wrapper li a:hover{
+  background-color: #fff9b7;
+  color: #0566A3;
+}
+
+#dropdown1 {
+  top: 64px !important;
+}
+
+#dropdown1 a{
+  color: gray;
+}
+
+#autoplay1 {
+  width: 100vw;
+  height:25vw;
+  background-image: url("http://imgur.com/4lBEJMd.jpg");
+  background-position: 50% 70%;
+  background-size: 100%;
+  color: white;
+}
+
+.carousel-isi-kanan{
+  float: right;
+  position: relative;
+  top: 6vw;
+  right: 6vw;
+  width: 30vw;
+  text-align: center;
+}
+
+#autoplay2{
+  background-image: url("http://imgur.com/pwWSSTM.jpg");
+  background-position: -30% 20%;
+  background-size: 120%;
+}
+
+.carousel-isi-kiri{
+  float: left;
+  position: relative;
+  top: 6vw;
+  right: -10vw;
+  width: 30vw;
+  text-align: center;
+  color: white;
+}
+
+.card img{
+  max-height: 20vw;
+  max-width: 20vw;
+}
+
+.card{
+  width: 20vw;
+}
+
+#barang-jualan{
+  padding: 10px;
+}
+
+#checkout{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: inherit;
+  padding: 5px;
+}
+
+#checkout:hover{
+  background: 
+}

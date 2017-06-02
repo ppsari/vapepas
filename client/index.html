@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vape - PAS</title>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+  <body>
+    <div class="badan">
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">MOD</a></li>
+        <li><a href="#!">Atomizer</a></li>
+        <li><a href="#!">E-Liquid</a></li>
+        <li><a href="#!">Accessories</a></li>
+      </ul>
+      <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img src="http://i.imgur.com/7syDHZz.png" alt="logo" style="height: 20px; margin-left: 10px;"></a>
+
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Category ▼</a></li>
+          <!-- Dropdown Trigger -->
+          <li><a href="#">Log In</a></li>
+        </ul>
+      </div>
+      </nav>
+    </div>
+
+    <div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2">SHOP NOW</a>
+    </div>
+    <div class="carousel-item" id="autoplay1" href="#one!">
+      <div class="carousel-isi-kanan">
+        <h1>VAPEPAS</h1>
+        <h2 class="white-text">Gandaria</h2>
+        <p>Jl. suatujalan no. ## Rt.##/**</p>
+      </div>
+    </div>
+    <div class="carousel-item" id="autoplay2" href="#two!">
+      <div class="carousel-isi-kiri">
+        <h2>Some cool vape quote</h2>
+        <p class="white-text">other cool quote</p>
+      </div>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
+  </div>
+
+  <div id="barang-jualan">
+    <h3 style="border-bottom: solid 1px #e2e2e2; padding:25px 0;">VAPEPAS</h3>
+    <div class="row">
+      <div class="col s9 barang-jualan">
+        <h5 style="margin-bottom: 20px;">{{Category}}</h5>
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://d1d8o7q9jg8pjk.cloudfront.net/p/md_58bd303ab74a0.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Authentic Boxer Classic 200W<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">Add to Cart</a></a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+            <p>Boxer Mod Classic YiHi200W with SX550J TFT Bluetooth Temperature Control is designed specifically for professional and high-end vapers.</p>
+            <h5>Rp. {{item.price}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col s3 cart-nya" style="background-color: yellow">
+        <table>
+          <h4>Your Cart</h4>
+          <thead>
+            <th>Nama</th>
+            <th>Jumlah</th>
+            <th>Harga</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>nama</td>
+              <td>#</td>
+              <td>150000</td>
+            </tr>
+            <tr style="border-top: solid 1px #b7babc">
+              <td class="col s2"></td>
+              <td>Total:</td>
+              <td>150000</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="checkout">
+          <h7><a href="#">checkout</a></h7>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+      })
+      autoplay()
+      function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+      }
+    </script>
+  </body>
+</html>
