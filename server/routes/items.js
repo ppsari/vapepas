@@ -7,6 +7,7 @@ const item_controller = require('../controllers/item_controller.js');
 //   res.send('index');
 // });
 
+router.get('/category/:cat', item_controller.findByCategory)
 router.get('/:id', item_controller.findOneItem);
 router.get('/', item_controller.getAllItem);
 router.post('/',item_controller.insertItem);

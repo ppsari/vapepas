@@ -9,6 +9,14 @@ const getAllItem = (req,res) => {
   })
 }
 
+const findByCategory = (req,res) => {
+  console.log('called '+req.params.cat)
+
+  Item.find({category: (req.params.cat) }, (err,items) => {
+    res.send(err? err : items);
+  })
+}
+
 const findOneItem = (req,res) => {
   Item.findOne(
     {_id: (req.params.id)},
@@ -54,5 +62,6 @@ module.exports = {
   findOneItem,
   updateItem,
   destroyItem,
-  insertItem
+  insertItem,
+  findByCategory
 }
