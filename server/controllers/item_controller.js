@@ -36,7 +36,8 @@ const updateItem = (req,res) => {
           price:req.body.price,
           stock:req.body.stock,
           category: req.body.category,
-          descr: req.body.descr
+          descr: req.body.descr,
+          img: req.body.img
         }
         item.save();
       }
