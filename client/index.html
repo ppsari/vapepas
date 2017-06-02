@@ -32,12 +32,23 @@
           <li><a href="#">Home</a></li>
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Category ▼</a></li>
           <!-- Dropdown Trigger -->
-          <li><a href="#">Log In</a></li>
+          <li><a class="modal-trigger" href="#login-modal">Log In</a></li>
         </ul>
       </div>
       </nav>
     </div>
 
+    <div id="login-modal" class="modal modal-fixed-footer"  style="width: 30%;">
+   <div class="modal-content">
+     <div class="loginnya">
+       <h4>Login</h4>
+       <input type="text" name="user-login" placeholder="username" />
+       <input type="password" name="pass-login" placeholder="password">
+       <button type="button" name="button">Login</button> &nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;<fb:login-button scope="public_profile,email,user_photos" onlogin="checkLoginState();"></fb:login-button>
+       <div id="status"></div>
+     </div>
+   </div>
+ </div>
     <div class="carousel carousel-slider center" data-indicators="true">
     <div class="carousel-fixed-item center">
       <a class="btn waves-effect white grey-text darken-text-2">SHOP NOW</a>
@@ -55,39 +66,44 @@
         <p class="white-text">other cool quote</p>
       </div>
     </div>
-    <div class="carousel-item green white-text" href="#three!">
-      <h2>Third Panel</h2>
-      <p class="white-text">This is your third panel</p>
+    <div class="carousel-item green white-text" id="autoplay3" href="#three!">
+      <div class="carousel-isi-kanan-tanggung">
+        <h1>Cloud Company</h1>
+        <h5 class="white-text">some ads sentences</h5>
+      </div>
     </div>
-    <div class="carousel-item blue white-text" href="#four!">
-      <h2>Fourth Panel</h2>
-      <p class="white-text">This is your fourth panel</p>
+    <div class="carousel-item blue white-text" id="autoplay4" href="#four!">
+      <div class="carousel-isi-kanan-2">
+        <h1>Fourth Panel</h1>
+        <h4 class="white-text">This is your fourth panel</h4>
+      </div>
     </div>
   </div>
+
 
   <div id="barang-jualan">
     <h3 style="border-bottom: solid 1px #e2e2e2; padding:25px 0;">VAPEPAS</h3>
     <div class="row">
       <div class="col s9 barang-jualan">
-        <h5 style="margin-bottom: 20px;">{{Category}}</h5>
+        <h5 style="margin-bottom: 20px;">{{category}}</h5>
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
             <img class="activator" src="https://d1d8o7q9jg8pjk.cloudfront.net/p/md_58bd303ab74a0.jpg">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Authentic Boxer Classic 200W<i class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4">{{item.name}}<i class="material-icons right">more_vert</i></span>
             <p><a href="#">Add to Cart</a></a></p>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-            <p>Boxer Mod Classic YiHi200W with SX550J TFT Bluetooth Temperature Control is designed specifically for professional and high-end vapers.</p>
+            <p>{{item.desc}}</p>
             <h5>Rp. {{item.price}}</h5>
           </div>
         </div>
       </div>
-      <div class="col s3 cart-nya" style="background-color: yellow">
+      <div class="col s3 cart-nya">
         <table>
-          <h4>Your Cart</h4>
+          <h4>Your Cart <i class="material-icons">shopping_cart</i></h4>
           <thead>
             <th>Nama</th>
             <th>Jumlah</th>
@@ -112,30 +128,137 @@
       </div>
       <div id="modal1" class="modal">
         <div class="modal-content"> <!-- ini nanti kasih api nya cekongkir juga berarti, sama harus responsif pake jquery ya? -->
-          <p style="white-space: pre-line">Silahkan pilih mau cod atau kirim?
-          silahkan masukkan alamat mu
-          mohon transfer ke rek. ****-****-**** a.n. vapepas dengan berita acara:
-          {{transaction._id}}</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a> <!-- ini nanti sekalian fungsi clear cart ga? -->
-        </div>
-      </div>
+          <h3>Checkout Form</h3>
+          <p style="white-space: pre-line">
+            Silahkan pilih metode pengiriman:
+          </p>
+          <div class="row">
+            <!-- kepala tabsnya -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s5"><a class="active" href="#test1">Pickup in Store</a></li>
+                <li class="tab col s3"><a href="#test2">Kirim</a></li>
+                </ul>
+            </div>
+            <!-- isi tabsnya -->
+            <!-- tabs 1 -->
+            <div id="test1" class="col s12" style="white-space: pre-line">
+              Jika kamu agak resah dengan para penyedia jasa pengiriman, silahkan datang ke toko kami dan langsung bawa pulang barang yang kamu pesan.
 
+              Silahkan lakukan transfer sejumlah Rp. {{transaction.total}}
+              ke nomor rekening <b>****-****-****-***</b> a.n. <b>VAPEPAS</b>
+              sertakan pada berita acara nomor transaksimu: <b>{{transaction._id}}</b>
+
+              Setelah transfer, kamu bisa langsung ambil barang kamu di toko kita di Jl. sebuahnamajalan, No. ** Gandaria Jakarta Selatan
+              <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a> <!-- ini nanti sekalian fungsi clear cart ga? -->
+              </div>
+            </div>
+            <!-- tabs 2 -->
+            <div id="test2" class="col s12">
+              <br>
+              Silahkan masukkan alamat yang akan dituju:
+              <br><br>
+              <div class="row" id="pencari-alamat">
+                <div class="col s12">
+                  <label for="autocomplete-input">Provinsi</label>
+                  <input type="text" id="autocomplete-input" class="autocomplete">
+                <br>
+                  <label for="autocomplete-input">Kota</label>
+                  <input type="text" id="autocomplete-input" class="autocomplete">
+                <br>
+                  <label for="textarea">Detail alamat dan nomor telephone</label>
+                  <textarea name="detailAlamat" rows="8" cols="80"></textarea>
+                <br><br>
+                <button type="button"class="btn" name="getOngkir">Next</button>
+                </div>
+              </div>
+              <div id="pemberitahuan" class="col s12" style="white-space: pre-line;">
+                  Pengiriman ke daerah mu terkena biaya sebesar Rp. {{ongkir.biaya}}
+
+                  Silahkan transfer ke nomor rekening <b>****-****-****-***</b> a.n. <b>VAPEPAS</b>
+                  sejumlah <b>{{ongkir.biaya + transaction.biaya}}</b>
+
+                  Sertakan pada berita acara nomor transaksimu: <b>{{transaction._id}}</b>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
+
+    </div>
+
   </div>
 
     <script type="text/javascript">
       $(document).ready(function() {
         $('.carousel.carousel-slider').carousel({fullWidth: true});
         $('.modal').modal();
+        $('select').material_select();
       })
       autoplay()
       function autoplay() {
         $('.carousel').carousel('next');
         setTimeout(autoplay, 4500);
       }
+
+
+      // <!-- FACEBOOK login -->
+
+      function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+
+        if (response.status === 'connected') {
+
+          testAPI();
+        } else {
+
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into this app.';
+        }
+      }
+
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+      }
+
+
+
+
+      window.fbAsyncInit = function() {
+      FB.init({
+        appId      : 135815470314546,
+        cookie     : true,
+
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+       function testAPI() {
+         console.log('Welcome!  Fetching your information.... ');
+         FB.api('/me', function(response) {
+           console.log('Successful login for: ' + response.name);
+           document.getElementById('status').innerHTML =
+             'Thanks for logging in, ' + response.name + '!';
+         });
+       }
     </script>
   </body>
 </html>

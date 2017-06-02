@@ -19,6 +19,9 @@
   color: gray;
 }
 
+#login-modal{
+}
+
 #autoplay1 {
   width: 100vw;
   height:25vw;
@@ -37,10 +40,42 @@
   text-align: center;
 }
 
+.carousel-isi-kanan-2{
+  float: right;
+  position: relative;
+  top: 6vw;
+  right: 6vw;
+  width: 30vw;
+  text-align: center;
+  background-color: gray;
+  opacity: 0.8;
+}
+
+.carousel-isi-kanan-tanggung{
+  float: right;
+  position: relative;
+  top: 3vw;
+  right: 30vw;
+  width: 30vw;
+  text-align: center;
+}
+
 #autoplay2{
   background-image: url("http://imgur.com/pwWSSTM.jpg");
   background-position: -30% 20%;
   background-size: 120%;
+}
+
+#autoplay3{
+  background-image: url("http://imgur.com/hMq1goq.jpg");
+  background-position: -70% 50%;
+  background-size: 75%;
+}
+
+#autoplay4{
+  background-image: url("http://elm.washcoll.edu/wp-content/uploads/2015/02/RiversideVapeShopKatieDoyle-4.jpg");
+  background-position: 0% 20%;
+  background-size:100%;
 }
 
 .carousel-isi-kiri{
@@ -67,14 +102,18 @@
 }
 
 #checkout{
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #1e54c9;
+  border-bottom: 1px solid #1e54c9;
   margin-top: 10px;
   margin-bottom: 10px;
   width: inherit;
   padding: 5px;
+  transition-duration: 2s;
 }
 
 #checkout:hover{
-  background: 
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid #1e54c9;
+  border-right: 1px solid #1e54c9;
 }

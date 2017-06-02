@@ -11,6 +11,8 @@ var items = require('./routes/items');
 var ongkirs = require('./routes/ongkirs');
 var gmaps = require('./routes/gmaps');
 var transactions = require('./routes/transactions');
+var mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/vapepas');
 var app = express();
 const cors = require('cors');
 // view engine setup

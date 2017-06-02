@@ -6,7 +6,8 @@ let itemSchema = new Schema({
   stock: String,
   price: Number,
   category: String,
-  descr : String
+  descr : String,
+  img: String
 });
 
 let Item = mongoose.model('Item',itemSchema);
