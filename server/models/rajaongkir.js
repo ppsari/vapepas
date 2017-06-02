@@ -1,9 +1,11 @@
 const ongkir = require('rajaongkir-node-js')
 
 const getProvince = (req,res) => {
+
+    console.log('get province @model')
   ongkir.getAllProvince()
-  .then( provinces => {
-     res.send(provinces.rajaongkir.results)
+  .then( (err,provinces) => {
+     res.send(err? err : provinces.rajaongkir.results)
   })
 }
 

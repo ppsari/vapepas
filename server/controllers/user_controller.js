@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const createUser= (req,res) => {
-  User.find({username:req.body.username}, (err,users)=> {
+  User.find({email:req.body.email,avatar:req.body.user_photos}, (err,users)=> {
     if (err) console.log('err');
 //    console.log(users);
 //    console.log(users.length)
@@ -8,7 +8,7 @@ const createUser= (req,res) => {
 
       let newUser = new User(req.body);
       newUser.save((err,user)=>{
-        res.send(err? err : `${user.username} sudah dimasukan` );
+        res.send(err? err : `${user.email} sudah dimasukan` );
       });
     }
     else res.send('dah pernah daftar')
