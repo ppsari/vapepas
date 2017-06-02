@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var items = require('./routes/items');
 var ongkirs = require('./routes/ongkirs');
+var gmaps = require('./routes/gmaps');
 var transactions = require('./routes/transactions');
 var app = express();
 const cors = require('cors');
@@ -30,6 +31,7 @@ app.use('/users', users);
 app.use('/items', items);
 app.use('/transactions', transactions);
 app.use('/ongkirs',ongkirs)
+app.use('/gmaps',gmaps)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
