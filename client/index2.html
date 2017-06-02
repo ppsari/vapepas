@@ -107,21 +107,8 @@
           </tbody>
         </table>
         <div id="checkout">
-          <h7><a href="#modal1" class="modal-trigger waves-effect waves-light">checkout</a></h7>
+          <h7><a href="#">checkout</a></h7>
         </div>
-      </div>
-      <div id="modal1" class="modal">
-        <div class="modal-content"> <!-- ini nanti kasih api nya cekongkir juga berarti, sama harus responsif pake jquery ya? -->
-          <p style="white-space: pre-line">Silahkan pilih mau cod atau kirim?
-          silahkan masukkan alamat mu
-          mohon transfer ke rek. ****-****-**** a.n. vapepas dengan berita acara:
-          {{transaction._id}}</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a> <!-- ini nanti sekalian fungsi clear cart ga? -->
-        </div>
-      </div>
-
       </div>
     </div>
   </div>
@@ -129,7 +116,6 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $('.carousel.carousel-slider').carousel({fullWidth: true});
-        $('.modal').modal();
       })
       autoplay()
       function autoplay() {
